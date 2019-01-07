@@ -11,10 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','HomeController@welcome');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'AdminController@index');
+
+Route::prefix('admin')->group(function(){
+	Route::get('/', 'AdminController@index');
+	Route::get('/kamar', 'AdminController@indexkamar');
+	Route::get('/kamar/add', 'AdminController@addkamar');
+	Route::post('/kamar/save', 'AdminController@savekamar');
+	Route::get('/kamar/edit/{id}', 'AdminController@editkamar');
+	Route::post('/kamar/update', 'AdminController@updatekamar');
+	Route::get('/kamar/delete/{id}', 'AdminController@deletekamar');
+});
