@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::post('/save', 'PenginapController@save');
+Route::get('/all', 'PenginapController@all');
+Route::get('/edit/{id}', 'PenginapController@edit');
+Route::post('/update/{id}', 'PenginapController@update');
+Route::get('/delete/{id}', 'PenginapController@delete');
+Route::get('/search', 'PenginapController@search');
