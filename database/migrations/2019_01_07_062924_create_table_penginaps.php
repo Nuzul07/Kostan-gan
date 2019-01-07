@@ -20,7 +20,10 @@ class CreateTablePenginaps extends Migration
             $table->string('jeniskelamin');
             $table->integer('nomortelepon');
             $table->unsignedinteger('kamars_id');
+<<<<<<< HEAD
             $table->string('gambar');
+=======
+>>>>>>> d95ca556616939069706c50c9b61eb9f2dba09c5
             $table->timestamps();
         });
     }
